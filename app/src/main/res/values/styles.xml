@@ -14,4 +14,9 @@
         <item name="android:background">#03A0E7</item>
     </style>
 
+    <style name="clear_dialog_fragment_theme" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 </resources>

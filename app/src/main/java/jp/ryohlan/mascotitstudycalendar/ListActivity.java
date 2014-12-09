@@ -59,6 +59,14 @@ public class ListActivity extends ActionBarActivity {
                 ((AnimationDrawable) animationView.getBackground()).start();
             }
         });
+        animationView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                CustomDialogFragment fragment = new CustomDialogFragment();
+                fragment.show(getFragmentManager(), "");
+                return true;
+            }
+        });
         ((AnimationDrawable) animationView.getBackground()).start();
         beforeScrollState = RecyclerView.SCROLL_STATE_IDLE;
         listView = (StickyListHeadersListView) findViewById(R.id.listView);
@@ -287,6 +295,9 @@ public class ListActivity extends ActionBarActivity {
     }
 
     public void fetchData() {
+        if (listView.getAdapter() != null)
+            return;
+
         Calendar calendar = Calendar.getInstance();
         RequestQueue q = VolleyHelper.getQueue(getApplicationContext());
         String url = "https://www.googleapis.com/calendar/v3/calendars/fvijvohm91uifvd9hratehf65k%40group.calendar.google.com/events?key=AIzaSyCDvMU1K3yXPSN4caYQmnommnaNyBniYBI&maxResults=500&timeMin=" + calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH) + 1) + "-01T00:00:00Z";

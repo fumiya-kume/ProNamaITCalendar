@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:background="@drawable/radius_black"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:background="@drawable/radius_gray"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="#aaa"
+                android:textSize="12sp"
+                android:text="製作者" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="Ryohlan" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="https://twitter.com/Ryohlan" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="#aaa"
+                android:textSize="12sp"
+                android:text="利用させていただいた素材" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="http://pronama.azurewebsites.net/pronama/guideline/" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="https://www.google.com/calendar/embed?src=ZnZpanZvaG05MXVpZnZkOWhyYXRlaGY2NWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="#aaa"
+                android:textSize="12sp"
+                android:text="利用ライブラリ" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="https://github.com/traex/CalendarListview" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="https://android.googlesource.com/platform/frameworks/volley/" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="https://code.google.com/p/google-gson/" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#666"
+                android:textSize="16sp"
+                android:autoLink="all"
+                android:text="https://github.com/emilsjolander/StickyListHeaders" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>
