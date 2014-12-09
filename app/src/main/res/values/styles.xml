@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBar.None</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.None" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:visibility">gone</item>
+        <item name="android:background">#03A0E7</item>
+    </style>
+
+</resources>

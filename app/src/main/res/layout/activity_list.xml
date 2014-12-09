@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jp.ryohlan.mascotitstudycalendar.ListActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_image"
+        android:scaleType="centerCrop"
+        android:alpha="0.3" />
+
+    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null" />
+
+    <TextView
+        android:id="@+id/fukidashi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_white"
+        android:layout_margin="8dp"
+        android:layout_alignTop="@+id/animationView"
+        android:layout_alignBottom="@+id/animationView"
+        android:layout_toLeftOf="@+id/animationView"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="#555" />
+
+    <ImageView
+        android:id="@+id/animationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp" />
+
+</RelativeLayout>
