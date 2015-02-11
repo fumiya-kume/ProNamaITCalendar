@@ -40,4 +40,17 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp" />
 
+    <Button
+        android:id="@+id/reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_blue"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="再度データを取得する"
+        android:textColor="#FFF"
+        android:layout_centerInParent="true" />
+
 </RelativeLayout>

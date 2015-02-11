@@ -12,9 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -43,12 +43,20 @@ public class ListActivity extends ActionBarActivity {
     private ImageView animationView;
     private int beforeScrollState;
     private TextView fukidashiView;
+    private Button reloadBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         getSupportActionBar().hide();
+        reloadBtn = (Button) findViewById(R.id.reload);
+        reloadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fetchData();
+            }
+        });
         fukidashiView = (TextView) findViewById(R.id.fukidashi);
         animationView = (ImageView) findViewById(R.id.animationView);
         animationView.setBackgroundResource(R.drawable.anim_waiting);
@@ -70,6 +78,7 @@ public class ListActivity extends ActionBarActivity {
         ((AnimationDrawable) animationView.getBackground()).start();
         beforeScrollState = RecyclerView.SCROLL_STATE_IDLE;
         listView = (StickyListHeadersListView) findViewById(R.id.listView);
+        listView.setEmptyView(reloadBtn);
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -215,7 +224,7 @@ public class ListActivity extends ActionBarActivity {
                 Date targetDate = sdf.parse(i.start.dateTime);
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(targetDate);
-                String str = String.format("%d時%d分〜", calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+                String str = String.format("%d時%d分", calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
                 holder.date.setText(str);
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -304,6 +313,7 @@ public class ListActivity extends ActionBarActivity {
         fukidashiView.setVisibility(View.VISIBLE);
         fukidashiView.setText("データを取りに行ってきまーーーす。");
         animationView.setBackgroundResource(R.drawable.anim_running);
+        reloadBtn.setVisibility(View.GONE);
         ((AnimationDrawable) animationView.getBackground()).start();
         Request r = VolleyRequestBuilder.create(
                 Request.Method.GET,
@@ -339,8 +349,9 @@ public class ListActivity extends ActionBarActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "データを取得に失敗しました。", Toast.LENGTH_SHORT).show();
-                        fukidashiView.setVisibility(View.GONE);
+                        reloadBtn.setVisibility(View.VISIBLE);
+                        fukidashiView.setVisibility(View.VISIBLE);
+                        fukidashiView.setText("あれー、データどこいったのかな");
                         animationView.setBackgroundResource(R.drawable.anim_waiting);
                         ((AnimationDrawable) animationView.getBackground()).start();
                     }
